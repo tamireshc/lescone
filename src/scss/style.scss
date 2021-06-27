@@ -1,0 +1,252 @@
+@import "grid";
+@import "variaveisemixins";
+
+body {
+  background: $bege-claro;
+  border: 10px solid $bege-medio;
+  @include d(s) {
+    border: none;
+  }
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.titulo {
+  @include tipo-1(18);
+  text-transform: uppercase;
+  @include d(s) {
+    margin-bottom: 40px;
+  }
+  &::after {
+    content: "";
+    display: block;
+    background: $cinza;
+    width: 75%;
+    float: right;
+    height: 2px;
+    margin-top: 14px;
+    @include d(m) {
+      width: 60%;
+    }
+  }
+}
+
+p {
+  @include tipo-1(18);
+}
+
+// intro
+.intro {
+  margin-top: 60px;
+  @include d(s) {
+    margin-top: 20px;
+  }
+}
+
+.logo {
+  margin-bottom: 60px;
+}
+
+.intro-info {
+  border-right: 2px solid $cinza;
+  max-width: 320px;
+  p {
+    padding-top: 10px;
+  }
+  p:first-child {
+    padding-bottom: 10px;
+    border-bottom: 2px solid $cinza;
+  }
+}
+
+.intro-telefone {
+  color: $bege-escuro;
+  @include d(s) {
+    margin-bottom: 40px;
+  }
+  &::after {
+    content: " ////";
+    display: block;
+    margin-top: 200px;
+    font-size: 220px;
+    letter-spacing: -90px;
+    color: $cinza;
+    @include d(m) {
+      margin-top: 80px;
+      font-size: 160px;
+      letter-spacing: -60px;
+    }
+    @include d(s) {
+      display: none;
+    }
+  }
+}
+
+.aberto {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: $verde;
+  border-radius: 50%;
+}
+
+.intro-foto {
+  border: 10px solid $bege-medio;
+  width: 100%;
+}
+
+//menu
+
+.menu {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  @include d(s) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+.menu-item {
+  margin-bottom: 60px;
+  h2 {
+    font-family: $fonte-2;
+    font-size: 24px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  li {
+    @include tipo-1(18);
+    line-height: em(35, 18);
+    text-decoration: none;
+    span {
+      display: inline-block;
+      font-family: $fonte-2;
+      color: $bege-escuro;
+      width: 70px;
+      text-align: right;
+      margin-left: -80px;
+      @include d(s) {
+        margin-left: 0px;
+        width: auto;
+      }
+    }
+  }
+  img {
+    border-radius: 50%;
+    border: 10px solid $bege-medio;
+    position: absolute;
+    right: 0px;
+    margin-top: 35px;
+    @include d(l) {
+      right: 120px;
+    }
+    @include d(s) {
+      width: 160px;
+    }
+  }
+}
+// contato
+
+.contato {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  @include d(s) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+.contato form {
+  label {
+    @include tipo-1(18);
+    display: block;
+  }
+
+  input,
+  textarea {
+    @include tipo-1(18);
+    color: $cinza;
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    border: 2px solid $bege-escuro;
+    background: transparent;
+    margin-bottom: 1em;
+    &:hover,
+    &:focus {
+      outline: none;
+      border-color: $bege-medio;
+    }
+  }
+  textarea {
+    height: 120px;
+  }
+
+  button {
+    @include tipo-1(18);
+    cursor: pointer;
+    color: $bege-escuro;
+    text-transform: uppercase;
+    border: 2px solid $bege-escuro;
+    background: transparent;
+    display: block;
+    width: 200px;
+    padding-top: 5px;
+    box-shadow: 3px 3px 0 0 $bege-medio, 5px 5px 0 0 $bege-escuro;
+    transition: 0.3s;
+    &:hover {
+      box-shadow: 1px 1px 0 0 $bege-medio, 3px 3px 0 0 $bege-escuro;
+    }
+  }
+}
+
+.contato-info {
+  display: block;
+  color: $bege-escuro;
+  float: right;
+  text-align: right;
+  margin-top: -45px;
+  margin-bottom: 20px;
+  @include d(m) {
+    float: none;
+    margin-top: 20px;
+    text-align: left;
+  }
+  @include d(s) {
+    float: none;
+    margin-top: 20px;
+    text-align: left;
+  }
+}
+
+.contato-mapa {
+  display: block;
+  box-shadow: 0 0 0 10px $bege-medio;
+  clear: both;
+  img {
+    width: 100%;
+  }
+}
+//footer
+
+footer {
+  padding: 20px 0;
+  background: $cinza;
+  box-shadow: 0 0 0 10px $cinza;
+  p {
+    color: $bege-claro;
+    @include d(s) {
+      text-align: center;
+    }
+  }
+  a img {
+    float: right;
+    margin-top: -30px;
+    @include d(s) {
+      float: none;
+      margin: 20px auto;
+    }
+  }
+}
